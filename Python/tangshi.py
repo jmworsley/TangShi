@@ -26,7 +26,9 @@ f = codecs.open("../Data/SamplePoem.txt", "r", "utf-8")
 for line in f:
   line = line.rstrip()
   for key in line:
-    if ping.match(mydict[key]):
+    if key not in mydict:
+      print key
+    elif ping.match(mydict[key]):
       print key + " = " + " Ping"
     elif shang.match(mydict[key]):
       print key + " = " + " Shang"
